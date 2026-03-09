@@ -1,0 +1,16 @@
+.header-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    background-color: aquamarine;
+}
+
+.nav-bar {
+    background-color: rgb(0, 255, 255);
+    padding: 10px;
+}
+
+.content {
+    background-color:rgb(151, 209, 183);
+}
+
