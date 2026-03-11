@@ -1,16 +1,26 @@
 :root {
-  --ink: #0b1f1b;
-  --ink-soft: #1f3631;
-  --paper: #f4f1e9;
-  --paper-strong: #fff8ea;
-  --clay: #d7d0c4;
-  --ocean: #1f6f6a;
-  --leaf: #7fb069;
-  --sun: #f2b84b;
-  --storm: #0d2c2c;
-  --accent: #f47c48;
-  --radius: 22px;
-  --shadow: 0 16px 45px rgba(7, 30, 25, 0.18);
+    --ink: #0b1f1b;
+    --ink-soft: #1f3631;
+    --paper: #f4f1e9;
+    --paper-strong: #fff8ea;
+    --clay: #d7d0c4;
+    --ocean: #1f6f6a;
+    --leaf: #7fb069;
+    --sun: #f2b84b;
+    --storm: #0d2c2c;
+    --accent: #f47c48;
+    --radius: 22px;
+    --shadow: 0 16px 45px rgba(7, 30, 25, 0.18);
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(circle at top left, #d8efe6 0%, transparent 48%),
+        linear-gradient(120deg, #f7f1e1, #f3efe9 40%, #e8f0ea 100%);
+    color: var(--ink);
+    font-family: "IBM Plex Serif", "Georgia", serif;
+    line-height: 1.7;
+    min-height: 100vh;
 }
 
 .header-name {
@@ -32,104 +42,112 @@ nav {
 }
 
 .stat-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
 }
 
 .stat-grid article {
-  padding: 1.2rem;
-  border-radius: 16px;
-  background: rgba(31, 111, 106, 0.12);
-  text-align: center;
+    padding: 1.2rem;
+    border-radius: 16px;
+    background: rgba(31, 111, 106, 0.12);
+    text-align: center;
 }
 
 .stat-grid h3 {
-  margin: 0;
-  font-size: 2rem;
+    margin: 0;
+    font-size: 2rem;
 }
 
 
 .layout {
-  display: grid;
-  grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
-  grid-template-areas: "local content";
-  gap: clamp(1.5rem, 3vw, 3rem);
-  padding: 2.5rem clamp(1.5rem, 4vw, 4rem) 3rem;
-  align-items: start;
+    display: grid;
+    grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
+    grid-template-areas: "local content";
+    gap: clamp(1.5rem, 3vw, 3rem);
+    padding: 2.5rem clamp(1.5rem, 4vw, 4rem) 3rem;
+    align-items: start;
 }
 
 .local-nav {
-  grid-area: local;
-  padding: 1.5rem;
-  background: var(--paper-strong);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  display: grid;
-  gap: 0.75rem;
-  position: sticky;
-  top: 1.5rem;
+    grid-area: local;
+    padding: 1.5rem;
+    background: var(--paper-strong);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: grid;
+    gap: 0.75rem;
+    position: sticky;
+    top: 1.5rem;
 }
 
 .local-nav h2 {
-  margin: 0;
-  font-size: 1.1rem;
+    margin: 0;
+    font-size: 1.1rem;
 }
 
 .local-nav a {
-  padding: 0.35rem 0.5rem;
-  border-left: 3px solid transparent;
-  border-radius: 10px;
-  transition: border 0.2s ease, background 0.2s ease;
+    padding: 0.35rem 0.5rem;
+    border-left: 3px solid transparent;
+    border-radius: 10px;
+    transition: border 0.2s ease, background 0.2s ease;
 }
 
 h1,
 h2,
 h3 {
-  font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
-  color: var(--storm);
-  letter-spacing: -0.02em;
+    font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+    color: var(--storm);
+    letter-spacing: -0.02em;
 }
 
 .site-footer {
-  padding: 2rem clamp(1.5rem, 4vw, 4rem) 3rem;
-  border-top: 1px solid rgba(31, 54, 49, 0.08);
-  background: rgba(255, 255, 255, 0.8);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: space-between;
+    padding: 2rem clamp(1.5rem, 4vw, 4rem) 3rem;
+    border-top: 1px solid rgba(31, 54, 49, 0.08);
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
 }
 
 @media (min-width: 576px) {
-  :root,
-  :host {
-    --pico-font-size: 106.25%;
-  }
-}
-@media (min-width: 768px) {
-  :root,
-  :host {
-    --pico-font-size: 112.5%;
-  }
-}
-@media (min-width: 1024px) {
-  :root,
-  :host {
-    --pico-font-size: 118.75%;
-  }
-}
-@media (min-width: 1280px) {
-  :root,
-  :host {
-    --pico-font-size: 125%;
-  }
-}
-@media (min-width: 1536px) {
-  :root,
-  :host {
-    --pico-font-size: 131.25%;
-  }
+
+    :root,
+    :host {
+        --pico-font-size: 106.25%;
+    }
 }
 
+@media (min-width: 768px) {
+
+    :root,
+    :host {
+        --pico-font-size: 112.5%;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    :root,
+    :host {
+        --pico-font-size: 118.75%;
+    }
+}
+
+@media (min-width: 1280px) {
+
+    :root,
+    :host {
+        --pico-font-size: 125%;
+    }
+}
+
+@media (min-width: 1536px) {
+
+    :root,
+    :host {
+        --pico-font-size: 131.25%;
+    }
+}
