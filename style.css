@@ -32,3 +32,36 @@
     background: rgba(31, 111, 106, 0.08);
 }
 
+
+
+@media (min-width: 576px) {
+  :root,
+  :host {
+    --pico-font-size: 106.25%;
+  }
+}
+@media (min-width: 768px) {
+  :root,
+  :host {
+    --pico-font-size: 112.5%;
+  }
+}
+@media (min-width: 1024px) {
+  :root,
+  :host {
+    --pico-font-size: 118.75%;
+  }
+}
+@media (min-width: 1280px) {
+  :root,
+  :host {
+    --pico-font-size: 125%;
+  }
+}
+@media (min-width: 1536px) {
+  :root,
+  :host {
+    --pico-font-size: 131.25%;
+  }
+}
+
