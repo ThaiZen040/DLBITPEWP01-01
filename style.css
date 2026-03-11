@@ -1,18 +1,22 @@
+:root {
+  --pico-primary: #7c3aed;
+  --pico-primary-hover: #6d28d9;
+}
+
 .header-name {
     font-size: 24px;
     font-weight: bold;
     color: rgb(0, 0, 0);
-    background-color: aquamarine;
 }
 
 .nav-bar {
     display:flex;
-    flex-wrap:wrap;
+    flex-direction: row;
     gap: 1rem;
-    background-color: rgb(0, 255, 255);
+    padding: 0.5rem;
 }
 
 .content {
-    background-color:rgb(151, 209, 183);
+    
 }
 
