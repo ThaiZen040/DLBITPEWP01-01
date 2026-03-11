@@ -31,6 +31,26 @@ nav {
     overflow: visible;
 }
 
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.stat-grid article {
+  padding: 1.2rem;
+  border-radius: 16px;
+  background: rgba(31, 111, 106, 0.12);
+  text-align: center;
+}
+
+.stat-grid h3 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+
 .layout {
   display: grid;
   grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
@@ -38,6 +58,30 @@ nav {
   gap: clamp(1.5rem, 3vw, 3rem);
   padding: 2.5rem clamp(1.5rem, 4vw, 4rem) 3rem;
   align-items: start;
+}
+
+.local-nav {
+  grid-area: local;
+  padding: 1.5rem;
+  background: var(--paper-strong);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 0.75rem;
+  position: sticky;
+  top: 1.5rem;
+}
+
+.local-nav h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.local-nav a {
+  padding: 0.35rem 0.5rem;
+  border-left: 3px solid transparent;
+  border-radius: 10px;
+  transition: border 0.2s ease, background 0.2s ease;
 }
 
 h1,
