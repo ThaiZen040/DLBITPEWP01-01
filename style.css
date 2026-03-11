@@ -1,9 +1,16 @@
 :root {
-    --pico-color-jade-300: #86efac;
-    --pico-color-green-350: #4ade80;
-    --pico-color-sand-150: #fef3c7;
-    --pico-color-storm-300: #94a3b8;
-
+  --ink: #0b1f1b;
+  --ink-soft: #1f3631;
+  --paper: #f4f1e9;
+  --paper-strong: #fff8ea;
+  --clay: #d7d0c4;
+  --ocean: #1f6f6a;
+  --leaf: #7fb069;
+  --sun: #f2b84b;
+  --storm: #0d2c2c;
+  --accent: #f47c48;
+  --radius: 22px;
+  --shadow: 0 16px 45px rgba(7, 30, 25, 0.18);
 }
 
 .header-name {
