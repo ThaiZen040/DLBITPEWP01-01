@@ -31,6 +31,15 @@ nav {
     overflow: visible;
 }
 
+.layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
+  grid-template-areas: "local content";
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding: 2.5rem clamp(1.5rem, 4vw, 4rem) 3rem;
+  align-items: start;
+}
+
 h1,
 h2,
 h3 {
