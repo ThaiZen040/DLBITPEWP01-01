@@ -2,6 +2,7 @@
     --pico-color-jade-300: #86efac;
     --pico-color-green-350: #4ade80;
     --pico-color-sand-150: #fef3c7;
+    --pico-color-storm-300: #94a3b8;
 
 }
 
@@ -11,28 +12,35 @@
     color: rgb(0, 0, 0);
 }
 
-.nav-bar ul{
-    padding-top: 10px;
-    padding-bottom: 10px;
+.global-nav {
     display: flex;
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-family: "Space Grotesk", sans-serif;
 }
 
-
-.global-nav a {
-    padding: 0.3rem 0.8rem;
-    border-radius: 999px;
-    border: 1px solid transparent;
-    color: rgb(0, 0, 0);
+nav {
+    justify-content: space-between;
+    overflow: visible;
 }
 
-.global-nav a:hover,
-.global-nav a:focus {
-    border-color: rgba(31, 111, 106, 0.4);
-    background: rgba(31, 111, 106, 0.08);
+h1,
+h2,
+h3 {
+  font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+  color: var(--storm);
+  letter-spacing: -0.02em;
 }
 
-
+.site-footer {
+  padding: 2rem clamp(1.5rem, 4vw, 4rem) 3rem;
+  border-top: 1px solid rgba(31, 54, 49, 0.08);
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
 
 @media (min-width: 576px) {
   :root,
