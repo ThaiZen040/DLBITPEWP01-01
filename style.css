@@ -1,6 +1,8 @@
 :root {
-  --pico-primary: #7c3aed;
-  --pico-primary-hover: #6d28d9;
+    --pico-color-jade-300: #86efac;
+    --pico-color-green-350: #4ade80;
+    --pico-color-sand-150: #fef3c7;
+
 }
 
 .header-name {
@@ -10,13 +12,23 @@
 }
 
 .nav-bar {
-    display:flex;
+    display: flex;
     flex-direction: row;
     gap: 1rem;
     padding: 0.5rem;
+    background-color: var(--pico-color-sand-150);
 }
 
-.content {
-    
+.global-nav a {
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    color: rgb(0, 0, 0);
+}
+
+.global-nav a:hover,
+.global-nav a:focus {
+    border-color: rgba(31, 111, 106, 0.4);
+    background: rgba(31, 111, 106, 0.08);
 }
 
