@@ -14,9 +14,12 @@
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
+body {
+    var(--pico-color-blue-500);
+}
 
 .header-name {
     font-size: 20px;
@@ -37,29 +40,22 @@ nav {
 }
 
 .content {
-  grid-area: content;
-  display: grid;
-  gap: 2rem;
-}
-
-.test {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
+    grid-area: content;
+    display: grid;
+    gap: 2rem;
 }
 
 
-.test h3 {
-  margin: 0;
-  font-size: 2rem;
-
+.grid p {
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
 }
 
-.style-grid p {
-  margin: 0.5rem 0 0;
-  font-size: 0.9rem;
-  color: var(--ink-soft);
+.grid h3 {
+    margin: 0;
+    font-size: 2rem;
+
 }
 
 .layout {
