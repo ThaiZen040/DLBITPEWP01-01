@@ -33,6 +33,16 @@ h3{
     font-family:"Space Grotesk", "Trebuchet MS", sans-serif;
 }
 
+a{
+    font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+
+}´
+
+a:hover,
+a:focus {
+  color: var(--ocean);
+}
+
 
 
 .header-name {
