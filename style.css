@@ -18,16 +18,17 @@
   box-sizing: border-box;
 }
 
-body { /* Hintergrund, Schriftart und Grundlayout der Seite festgelegt */
-  margin: 0;
-  background: radial-gradient(circle at top left, #d8efe6 0%, transparent 48%), /* Weiche, organische Farbverläufe, die dem Design Tiefe und visuelles Interesse verleihen. */
-    linear-gradient(120deg, #f7f1e1, #f3efe9 40%, #e8f0ea 100%); /* Hintergrund mit einem radialen Farbverlauf, der von der oberen linken Ecke ausgeht, kombiniert mit einem linearen Farbverlauf, der warme, erdige Töne verwendet. */
-  color: var(--ink); /* Standardtextfarbe, die auf der definierten Tintenfarbe basiert. */
-  font-family: "IBM Plex Serif", "Georgia", serif; /* Eine elegante Serifenschrift für den Haupttext, die Lesbarkeit und einen klassischen Look bietet. */
-  line-height: 1.7; 
-  min-height: 100vh; 
+html,
+body {
+    min-height: 100vh;
+    background-color: #f3efe9;
 }
 
+body {
+    background:
+        radial-gradient(circle at top left, #d8efe6 0%, #f3efe9 48%),
+        linear-gradient(120deg, #f7f1e1, #f3efe9 40%, #e8f0ea 100%);
+}
 
 h1,
 h2,
