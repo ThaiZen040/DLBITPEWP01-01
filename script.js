@@ -35,6 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
 const emissionsApp = () => ({
     rows: [
         { id: 1, country: "Deutschland", company: "NordWind Energie", sector: "Energie", emissions: 82.4 },
+        { id: 2, country: "Deutschland", company: "RheinMetallurgy", sector: "Industrie", emissions: 45.2 },
+        { id: 3, country: "Deutschland", company: "AutoMobil AG", sector: "Transport", emissions: 60.1 },
+            
 
     ],
     filters: {
