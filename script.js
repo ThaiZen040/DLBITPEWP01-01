@@ -32,11 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
     initDirectionToggle();
 });
 
-const emissionsdata = {
-    "Germany": 800,
-    "USA": 5000,
-    "China": 10000,
-    "India": 3000,
-    "Russia": 2000
-};  
+const emissionsApp = () => ({
+    rows: [
+        { id: 1, country: "Deutschland", company: "NordWind Energie", sector: "Energie", emissions: 82.4 },
 
+    ],
+    filters: {
+        country: "",
+        company: "",
+        sector: "all"
+    },
+})
