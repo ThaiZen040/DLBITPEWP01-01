@@ -396,6 +396,12 @@ a:focus {
         position: sticky;
         top: 1.5rem;
     }
+
+    .site-footer{
+        flex-wrap: nowrap;
+        justify-content: space-between;  
+        display:none;      
+    }
 }
 
 @media (min-width: 576px) {
