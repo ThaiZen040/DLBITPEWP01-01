@@ -385,7 +385,7 @@ a:focus {
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .layout {
         grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
         grid-template-areas: "local content";
@@ -401,6 +401,11 @@ a:focus {
         flex-wrap: nowrap;
         justify-content: space-between;  
         display:none;      
+    }
+
+    body{
+      background:
+      linear-gradient(120deg, #f7f1e1 0%, #f0ebe2 50%, #e8f0ea 100%); 
     }
 }
 
