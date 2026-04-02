@@ -399,26 +399,40 @@ a:focus {
 
 @media (max-width: 768px) {
 
-  html,
-  body {
-    min-height: 100%;
+  @media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "local"
+      "content";
+    padding: 1.25rem 1rem 2rem;
   }
 
-  body {
-    background:
-      linear-gradient(120deg, #f7f1e1 0%, #f0ebe2 50%, #e8f0ea 100%);
+  .local-nav {
+    position: static;
+    top: auto;
   }
 
-  .ambient {
-    background:
-      radial-gradient(circle at 85% 15%, rgba(127, 176, 105, 0.14), transparent 40%),
-      radial-gradient(circle at 10% 80%, rgba(244, 124, 72, 0.12), transparent 45%);
+  .filters {
+    grid-template-columns: 1fr;
   }
 
-  .site-header {
-    gap: 1rem;
-    padding: 1.5rem 1rem 1rem;
+  .panel-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
+
+  .cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .site-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
 }
 
 @media (min-width: 576px) {
