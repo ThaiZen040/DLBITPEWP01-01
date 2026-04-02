@@ -1,4 +1,5 @@
-:root {  /* Pico CSS Farben festgelegt für HTML Elemente */
+:root {
+  /* Pico CSS Farben festgelegt für HTML Elemente */
   --ink: #0b1f1b;
   --ink-soft: #1f3631;
   --paper: #f4f1e9;
@@ -20,13 +21,13 @@
 
 html,
 body {
-    min-height: 100vh;
-    background-color: #f3efe9;
+  min-height: 100vh;
+  background-color: #f3efe9;
 }
 
 body {
-    background:
-        linear-gradient(120deg, #f7f1e1, #f3efe9 40%, #e8f0ea 100%);
+  background:
+    linear-gradient(120deg, #f7f1e1, #f3efe9 40%, #e8f0ea 100%);
 }
 
 h1,
@@ -47,17 +48,23 @@ a:focus {
   color: var(--ocean);
 }
 
-.ambient { /* Dekorative Hintergrundelemente, die über die Seite gelegt werden, um visuelles Interesse zu erzeugen. */
-  position: fixed; /* Fixiert die Position der dekorativen Elemente, damit sie beim Scrollen sichtbar bleiben. */
-  inset: 0; /* Deckt den gesamten Ansichtsbereich ab, damit die dekorativen Elemente überall auf der Seite sichtbar sind. */
+.ambient {
+  /* Dekorative Hintergrundelemente, die über die Seite gelegt werden, um visuelles Interesse zu erzeugen. */
+  position: fixed;
+  /* Fixiert die Position der dekorativen Elemente, damit sie beim Scrollen sichtbar bleiben. */
+  inset: 0;
+  /* Deckt den gesamten Ansichtsbereich ab, damit die dekorativen Elemente überall auf der Seite sichtbar sind. */
   background: radial-gradient(circle at 85% 15%, rgba(127, 176, 105, 0.2), transparent 40%),
     radial-gradient(circle at 10% 80%, rgba(244, 124, 72, 0.18), transparent 45%);
   pointer-events: none;
-  z-index: -1; /* Stellt sicher, dass die dekorativen Elemente hinter dem Hauptinhalt der Seite liegen und keine Interaktionen blockieren. */
+  z-index: -1;
+  /* Stellt sicher, dass die dekorativen Elemente hinter dem Hauptinhalt der Seite liegen und keine Interaktionen blockieren. */
 }
 
-.site-header { /* Der Kopfbereich der Seite, der die Marke, Navigation und Richtungsumschalter enthält. */
-  display: grid; /* Verwendet  Grid, um die Elemente im Kopfbereich zu organisieren, was Flexibilität und Kontrolle über das Layout ermöglicht. */
+.site-header {
+  /* Der Kopfbereich der Seite, der die Marke, Navigation und Richtungsumschalter enthält. */
+  display: grid;
+  /* Verwendet  Grid, um die Elemente im Kopfbereich zu organisieren, was Flexibilität und Kontrolle über das Layout ermöglicht. */
   gap: 1.5rem;
   padding: 2.5rem clamp(1.5rem, 4vw, 4rem) 1.5rem;
   background: rgba(255, 255, 255, 0.75);
@@ -65,13 +72,15 @@ a:focus {
   backdrop-filter: blur(10px);
 }
 
-.brand { /* Der Markenbereich im Kopf, der das Logo und die Titel enthält. */
+.brand {
+  /* Der Markenbereich im Kopf, der das Logo und die Titel enthält. */
   display: flex;
   gap: 1.5rem;
   align-items: center;
 }
 
-.logo { /* Das runde Logo-Element, das die Initialen oder ein Symbol der Marke darstellt. */
+.logo {
+  /* Das runde Logo-Element, das die Initialen oder ein Symbol der Marke darstellt. */
   width: 64px;
   height: 64px;
   border-radius: 50%;
@@ -81,7 +90,8 @@ a:focus {
   box-shadow: inset 0 0 0 6px rgba(255, 255, 255, 0.7);
 }
 
-.eyebrow { /* Ein dekoratives Textelement über dem Haupttitel, das oft für Kategorien oder kurze Beschreibungen verwendet wird. */
+.eyebrow {
+  /* Ein dekoratives Textelement über dem Haupttitel, das oft für Kategorien oder kurze Beschreibungen verwendet wird. */
   text-transform: uppercase;
   letter-spacing: 0.3em;
   font-size: 0.7rem;
@@ -89,13 +99,15 @@ a:focus {
   margin-bottom: 0.35rem;
 }
 
-.subtitle { /* Ein Untertitel oder eine kurze Beschreibung unter dem Haupttitel, der zusätzliche Informationen bietet. */
+.subtitle {
+  /* Ein Untertitel oder eine kurze Beschreibung unter dem Haupttitel, der zusätzliche Informationen bietet. */
   margin: 0.3rem 0 0;
   color: var(--ink-soft);
   font-size: 1rem;
 }
 
-.global-nav { /* Die Hauptnavigationsleiste, die Links zu verschiedenen Abschnitten oder Seiten der Website enthält. */
+.global-nav {
+  /* Die Hauptnavigationsleiste, die Links zu verschiedenen Abschnitten oder Seiten der Website enthält. */
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -378,6 +390,7 @@ a:focus {
     opacity: 0;
     transform: translateY(16px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -385,60 +398,65 @@ a:focus {
 }
 
 @media (max-width: 768px) {
-    .layout {
-        grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
-        grid-template-areas: "local content";
-        padding: 2rem clamp(1.5rem, 4vw, 4rem) 3rem;
-    }
 
-    .local-nav {
-        position: sticky;
-        top: 1.5rem;
-    }
+  html,
+  body {
+    min-height: 100%;
+  }
 
-    .site-footer{
-        flex-wrap: nowrap;
-        justify-content: space-between;  
-        display:none;      
-    }
+  body {
+    background:
+      linear-gradient(120deg, #f7f1e1 0%, #f0ebe2 50%, #e8f0ea 100%);
+  }
 
-    body{
-      background:
-      linear-gradient(120deg, #f7f1e1 0%, #f0ebe2 50%, #e8f0ea 100%); 
-    }
+  .ambient {
+    background:
+      radial-gradient(circle at 85% 15%, rgba(127, 176, 105, 0.14), transparent 40%),
+      radial-gradient(circle at 10% 80%, rgba(244, 124, 72, 0.12), transparent 45%);
+  }
+
+  .site-header {
+    gap: 1rem;
+    padding: 1.5rem 1rem 1rem;
+  }
 }
 
 @media (min-width: 576px) {
-    :root,
-    :host {
-        --pico-font-size: 106.25%;
-    }
+
+  :root,
+  :host {
+    --pico-font-size: 106.25%;
+  }
 }
 
 @media (min-width: 768px) {
-    :root,
-    :host {
-        --pico-font-size: 112.5%;
-    }
+
+  :root,
+  :host {
+    --pico-font-size: 112.5%;
+  }
 }
 
 @media (min-width: 1024px) {
-    :root,
-    :host {
-        --pico-font-size: 118.75%;
-    }
+
+  :root,
+  :host {
+    --pico-font-size: 118.75%;
+  }
 }
 
 @media (min-width: 1280px) {
-    :root,
-    :host {
-        --pico-font-size: 125%;
-    }
+
+  :root,
+  :host {
+    --pico-font-size: 125%;
+  }
 }
 
 @media (min-width: 1536px) {
-    :root,
-    :host {
-        --pico-font-size: 131.25%;
-    }
+
+  :root,
+  :host {
+    --pico-font-size: 131.25%;
+  }
 }
