@@ -26,7 +26,6 @@ body {
 
 body {
     background:
-        radial-gradient(circle at top left, #d8efe6 0%, #f3efe9 48%),
         linear-gradient(120deg, #f7f1e1, #f3efe9 40%, #e8f0ea 100%);
 }
 
