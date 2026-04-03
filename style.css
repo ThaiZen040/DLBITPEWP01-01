@@ -72,15 +72,12 @@ a:focus {
   /* Der Kopfbereich der Seite, der die Marke, Navigation und Richtungsumschalter enthält. */
   display: grid;
   /* Verwendet  Grid, um die Elemente im Kopfbereich zu organisieren, was Flexibilität und Kontrolle über das Layout ermöglicht. */
-<<<<<<< HEAD
   gap: 1.25rem;
   padding: 2rem clamp(1.25rem, 4vw, 4rem) 1.25rem;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.8));
-=======
   gap: 1.5rem;
   padding: 2.5rem clamp(1.5rem, 4vw, 4rem) 1.5rem;
   background: rgba(255, 255, 255, 0.75);
->>>>>>> 8696f5e805859bea13a08c638a92b912443aa98d
   border-bottom: 1px solid rgba(31, 54, 49, 0.08);
   backdrop-filter: blur(10px);
 }
@@ -93,20 +90,10 @@ a:focus {
   min-width: 0;
 }
 
-<<<<<<< HEAD
-.brand-copy {
-  display: grid;
-  gap: 0.35rem;
-  min-width: 0;
-}
-
-.logo {
-=======
 .logo {
   /* Das runde Logo-Element, das die Initialen oder ein Symbol der Marke darstellt. */
->>>>>>> 8696f5e805859bea13a08c638a92b912443aa98d
-  width: 64px;
-  height: 64px;
+  width: 10%;
+  height: 10%;
   flex: 0 0 auto;
   display: grid;
   place-items: center;
