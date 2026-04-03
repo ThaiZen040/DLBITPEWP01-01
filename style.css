@@ -26,10 +26,15 @@ body {
 }
 
 body {
+<<<<<<< HEAD
   margin: 0;
   background:
     linear-gradient(120deg, #f7f1e1, #f3efe9 40%, #e8f0ea 100%),
     radial-gradient(circle at top left, #d8efe6 0%, #f3efe9 48%);
+=======
+  background:
+    linear-gradient(120deg, #f7f1e1, #f3efe9 40%, #e8f0ea 100%);
+>>>>>>> 8696f5e805859bea13a08c638a92b912443aa98d
 }
 
 h1,
@@ -67,9 +72,15 @@ a:focus {
   /* Der Kopfbereich der Seite, der die Marke, Navigation und Richtungsumschalter enthält. */
   display: grid;
   /* Verwendet  Grid, um die Elemente im Kopfbereich zu organisieren, was Flexibilität und Kontrolle über das Layout ermöglicht. */
+<<<<<<< HEAD
   gap: 1.25rem;
   padding: 2rem clamp(1.25rem, 4vw, 4rem) 1.25rem;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.8));
+=======
+  gap: 1.5rem;
+  padding: 2.5rem clamp(1.5rem, 4vw, 4rem) 1.5rem;
+  background: rgba(255, 255, 255, 0.75);
+>>>>>>> 8696f5e805859bea13a08c638a92b912443aa98d
   border-bottom: 1px solid rgba(31, 54, 49, 0.08);
   backdrop-filter: blur(10px);
 }
@@ -82,6 +93,7 @@ a:focus {
   min-width: 0;
 }
 
+<<<<<<< HEAD
 .brand-copy {
   display: grid;
   gap: 0.35rem;
@@ -89,6 +101,10 @@ a:focus {
 }
 
 .logo {
+=======
+.logo {
+  /* Das runde Logo-Element, das die Initialen oder ein Symbol der Marke darstellt. */
+>>>>>>> 8696f5e805859bea13a08c638a92b912443aa98d
   width: 64px;
   height: 64px;
   flex: 0 0 auto;
@@ -102,6 +118,7 @@ a:focus {
   box-shadow: 0 14px 32px rgba(7, 30, 25, 0.12);
 }
 
+<<<<<<< HEAD
 .logo span {
   font-family: "Space Grotesk", sans-serif;
   font-size: 1rem;
@@ -116,6 +133,8 @@ a:focus {
   line-height: 0.98;
 }
 
+=======
+>>>>>>> 8696f5e805859bea13a08c638a92b912443aa98d
 .eyebrow {
   /* Ein dekoratives Textelement über dem Haupttitel, das oft für Kategorien oder kurze Beschreibungen verwendet wird. */
   text-transform: uppercase;
@@ -127,7 +146,11 @@ a:focus {
 
 .subtitle {
   /* Ein Untertitel oder eine kurze Beschreibung unter dem Haupttitel, der zusätzliche Informationen bietet. */
+<<<<<<< HEAD
   margin: 0.15rem 0 0;
+=======
+  margin: 0.3rem 0 0;
+>>>>>>> 8696f5e805859bea13a08c638a92b912443aa98d
   color: var(--ink-soft);
   font-size: 1.05rem;
   line-height: 1.45;
@@ -437,6 +460,7 @@ a:focus {
   }
 }
 
+<<<<<<< HEAD
 @media (max-width: 960px) {
   .layout {
     grid-template-columns: minmax(0, 1fr);
@@ -465,6 +489,15 @@ a:focus {
     min-height: 100%;
   }
 
+=======
+@media (max-width: 768px) {
+
+  html,
+  body {
+    min-height: 100%;
+  }
+
+>>>>>>> 8696f5e805859bea13a08c638a92b912443aa98d
   body {
     background:
       linear-gradient(120deg, #f7f1e1 0%, #f0ebe2 50%, #e8f0ea 100%);
