@@ -69,6 +69,10 @@ a:focus {
   align-items: center;
 }
 
+.brand svg {
+  max-width: none;
+}
+
 .logo {
   width: 64px;
   height: 64px;
