@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Carbon Atlas Logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0aa37a"/>
+      <stop offset="100%" stop-color="#0b4f8a"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="52" fill="url(#g)"/>
+  <path d="M35 70c8 10 20 16 32 16 14 0 27-7 35-18" fill="none" stroke="#e8fff7" stroke-width="8" stroke-linecap="round"/>
+  <path d="M40 50c6-9 16-14 28-14 12 0 23 5 30 14" fill="none" stroke="#e8fff7" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="44" cy="60" r="6" fill="#e8fff7"/>
+  <circle cx="76" cy="60" r="6" fill="#e8fff7"/>
+</svg>

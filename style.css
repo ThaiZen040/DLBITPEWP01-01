@@ -1,5 +1,4 @@
 :root {
-  /* Pico CSS Farben festgelegt für HTML Elemente */
   --ink: #0b1f1b;
   --ink-soft: #1f3631;
   --paper: #f4f1e9;
@@ -14,27 +13,18 @@
   --shadow: 0 16px 45px rgba(7, 30, 25, 0.18);
 }
 
-/*  Globale Stile für die gesamte Seite, einschließlich Layout, Typografie und Interaktionen. */
 * {
   box-sizing: border-box;
 }
 
-html,
 body {
-  min-height: 100vh;
-  background-color: #f3efe9;
-}
-
-body {
-<<<<<<< HEAD
   margin: 0;
-  background:
-    linear-gradient(120deg, #f7f1e1, #f3efe9 40%, #e8f0ea 100%),
-    radial-gradient(circle at top left, #d8efe6 0%, #f3efe9 48%);
-=======
-  background:
+  background: radial-gradient(circle at top left, #d8efe6 0%, transparent 48%),
     linear-gradient(120deg, #f7f1e1, #f3efe9 40%, #e8f0ea 100%);
->>>>>>> 8696f5e805859bea13a08c638a92b912443aa98d
+  color: var(--ink);
+  font-family: "IBM Plex Serif", "Georgia", serif;
+  line-height: 1.7;
+  min-height: 100vh;
 }
 
 h1,
@@ -56,25 +46,16 @@ a:focus {
 }
 
 .ambient {
-  /* Dekorative Hintergrundelemente, die über die Seite gelegt werden, um visuelles Interesse zu erzeugen. */
   position: fixed;
-  /* Fixiert die Position der dekorativen Elemente, damit sie beim Scrollen sichtbar bleiben. */
   inset: 0;
-  /* Deckt den gesamten Ansichtsbereich ab, damit die dekorativen Elemente überall auf der Seite sichtbar sind. */
   background: radial-gradient(circle at 85% 15%, rgba(127, 176, 105, 0.2), transparent 40%),
     radial-gradient(circle at 10% 80%, rgba(244, 124, 72, 0.18), transparent 45%);
   pointer-events: none;
   z-index: -1;
-  /* Stellt sicher, dass die dekorativen Elemente hinter dem Hauptinhalt der Seite liegen und keine Interaktionen blockieren. */
 }
 
 .site-header {
-  /* Der Kopfbereich der Seite, der die Marke, Navigation und Richtungsumschalter enthält. */
   display: grid;
-  /* Verwendet  Grid, um die Elemente im Kopfbereich zu organisieren, was Flexibilität und Kontrolle über das Layout ermöglicht. */
-  gap: 1.25rem;
-  padding: 2rem clamp(1.25rem, 4vw, 4rem) 1.25rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.8));
   gap: 1.5rem;
   padding: 2.5rem clamp(1.5rem, 4vw, 4rem) 1.5rem;
   background: rgba(255, 255, 255, 0.75);
@@ -83,47 +64,22 @@ a:focus {
 }
 
 .brand {
-  /* Der Markenbereich im Kopf, der das Logo und die Titel enthält. */
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  min-width: 0;
+  gap: 1.5rem;
+  align-items: center;
 }
 
 .logo {
-  /* Das runde Logo-Element, das die Initialen oder ein Symbol der Marke darstellt. */
-  width: 10%;
-  height: 10%;
-  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--paper-strong);
   display: grid;
   place-items: center;
-  border-radius: 20px;
-  border: 1px solid rgba(31, 54, 49, 0.08);
-  background:
-    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.95), rgba(255, 248, 234, 0.88) 65%),
-    linear-gradient(135deg, rgba(127, 176, 105, 0.14), rgba(31, 111, 106, 0.08));
-  box-shadow: 0 14px 32px rgba(7, 30, 25, 0.12);
+  box-shadow: inset 0 0 0 6px rgba(255, 255, 255, 0.7);
 }
 
-<<<<<<< HEAD
-.logo span {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--ocean);
-}
-
-.brand h1 {
-  margin: 0;
-  font-size: clamp(2.3rem, 4.8vw, 4rem);
-  line-height: 0.98;
-}
-
-=======
->>>>>>> 8696f5e805859bea13a08c638a92b912443aa98d
 .eyebrow {
-  /* Ein dekoratives Textelement über dem Haupttitel, das oft für Kategorien oder kurze Beschreibungen verwendet wird. */
   text-transform: uppercase;
   letter-spacing: 0.3em;
   font-size: 0.7rem;
@@ -132,39 +88,22 @@ a:focus {
 }
 
 .subtitle {
-  /* Ein Untertitel oder eine kurze Beschreibung unter dem Haupttitel, der zusätzliche Informationen bietet. */
-<<<<<<< HEAD
-  margin: 0.15rem 0 0;
-=======
   margin: 0.3rem 0 0;
->>>>>>> 8696f5e805859bea13a08c638a92b912443aa98d
   color: var(--ink-soft);
-  font-size: 1.05rem;
-  line-height: 1.45;
-  max-width: 42ch;
+  font-size: 1rem;
 }
 
 .global-nav {
-  /* Die Hauptnavigationsleiste, die Links zu verschiedenen Abschnitten oder Seiten der Website enthält. */
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 5rem;
+  gap: 1rem;
   font-family: "Space Grotesk", sans-serif;
 }
 
 .global-nav a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  color: var(--ink-soft);
-  font-weight: 600;
   padding: 0.3rem 0.8rem;
   border-radius: 999px;
-  border: 1px solid rgba(31, 54, 49, 0.08);
-  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid transparent;
   transition: border 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 
@@ -178,9 +117,8 @@ a:focus {
   justify-self: start;
   background: var(--storm);
   color: #fefaf2;
-  margin-top: 0.5rem;
   border-radius: 999px;
-  padding: 0.5rem 0.4rem;
+  padding: 0.5rem 1.4rem;
   font-family: "Space Grotesk", sans-serif;
   border: none;
   cursor: pointer;
@@ -210,7 +148,7 @@ a:focus {
 .local-nav {
   grid-area: local;
   padding: 1.5rem;
-  background: rgba(255, 248, 234, 0.92);
+  background: var(--paper-strong);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   display: grid;
@@ -226,8 +164,6 @@ a:focus {
 
 .local-nav a {
   padding: 0.35rem 0.5rem;
-  color: var(--ink-soft);
-  font-weight: 500;
   border-left: 3px solid transparent;
   border-radius: 10px;
   transition: border 0.2s ease, background 0.2s ease;
@@ -415,7 +351,7 @@ a:focus {
 }
 
 .muted {
-  color: rgba(13, 44, 44, 0.78);
+  color: rgba(13, 44, 44, 0.7);
 }
 
 .small {
@@ -440,292 +376,48 @@ a:focus {
     opacity: 0;
     transform: translateY(16px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-<<<<<<< HEAD
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none;
+    opacity: 1;
+  }
+}
+
 @media (max-width: 960px) {
-  .layout {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas:
-      "local"
-      "content";
+  .site-header {
+    gap: 1.2rem;
   }
 
-  [dir="rtl"] .layout {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas:
-      "local"
-      "content";
+  .layout {
+    grid-template-columns: 1fr;
   }
 
   .local-nav {
     position: static;
-    top: auto;
-  }
-}
-
-@media (max-width: 768px) {
-
-  html,
-  body {
-    min-height: 100%;
-  }
-
-=======
-@media (max-width: 768px) {
-
-  html,
-  body {
-    min-height: 100%;
-  }
-
->>>>>>> 8696f5e805859bea13a08c638a92b912443aa98d
-  body {
-    background:
-      linear-gradient(120deg, #f7f1e1 0%, #f0ebe2 50%, #e8f0ea 100%);
-  }
-
-  .ambient {
-    background:
-      radial-gradient(circle at 85% 15%, rgba(127, 176, 105, 0.14), transparent 40%),
-      radial-gradient(circle at 10% 80%, rgba(244, 124, 72, 0.12), transparent 45%);
-  }
-
-  .site-header {
-    gap: 1rem;
-    padding: 1.4rem 1rem 1rem;
-  }
-
-  .brand {
-    gap: 0.85rem;
-  }
-
-  .logo {
-    width: 54px;
-    height: 54px;
-    border-radius: 16px;
-  }
-
-  .logo span {
-    font-size: 0.9rem;
-  }
-
-  .brand h1 {
-    font-size: clamp(1.95rem, 8vw, 2.85rem);
-  }
-
-  .eyebrow {
-    font-size: 0.68rem;
-    letter-spacing: 0.24em;
-  }
-
-  .subtitle {
-    font-size: 0.98rem;
-    line-height: 1.4;
-    max-width: 32ch;
-  }
-
-  .global-nav {
-    flex-wrap: nowrap;
-    gap: 0.55rem;
-    overflow-x: auto;
-    padding: 0.1rem 0 0.3rem;
-    scrollbar-width: none;
-  }
-
-  .global-nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  .global-nav a {
-    white-space: nowrap;
-    padding: 0.58rem 0.85rem;
-    background: rgba(255, 255, 255, 0.82);
-    border-color: rgba(31, 54, 49, 0.12);
   }
 
   .dir-toggle {
-    width: 100%;
-    justify-self: stretch;
+    width: fit-content;
   }
+}
 
-  .layout {
-    gap: 1rem;
-    padding: 1rem 1rem 2rem;
-  }
-
-  .local-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.55rem;
-    padding: 1rem;
-  }
-
-  .local-nav h2 {
-    width: 100%;
-    margin-bottom: 0.1rem;
-  }
-
-  .local-nav a {
-    border-left: none;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid rgba(31, 54, 49, 0.1);
-    background: rgba(255, 255, 255, 0.72);
-  }
-
-  [dir="rtl"] .local-nav a {
-    border-right: 1px solid rgba(31, 54, 49, 0.1);
-  }
-
-  .content {
-    gap: 1rem;
-  }
-
-  .panel {
-    padding: 1.2rem;
-  }
-
-  .panel-header {
+@media (max-width: 640px) {
+  .brand {
+    flex-direction: column;
     align-items: flex-start;
-    gap: 0.75rem;
+  }
+
+  .global-nav {
+    gap: 0.5rem;
   }
 
   .filters {
     grid-template-columns: 1fr;
-  }
-
-  .filters button {
-    width: 100%;
-  }
-
-  .table-wrap table {
-    min-width: 420px;
-  }
-
-  .table-wrap th,
-  .table-wrap td {
-    padding: 0.7rem;
-    font-size: 0.93rem;
-  }
-
-  .cta {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .cta button {
-    width: 100%;
-  }
-
-  .site-footer {
-    padding: 1.5rem 1rem 2rem;
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 480px) {
-  .site-header {
-    padding: 1.1rem 0.85rem 0.9rem;
-  }
-
-  .brand {
-    gap: 0.75rem;
-  }
-
-  .logo {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-  }
-
-  .logo span {
-    font-size: 0.82rem;
-  }
-
-  .brand h1 {
-    font-size: clamp(1.75rem, 10vw, 2.25rem);
-    line-height: 1;
-  }
-
-  .subtitle {
-    font-size: 0.95rem;
-    max-width: 28ch;
-  }
-
-  .global-nav {
-    gap: 0.45rem;
-  }
-
-  .global-nav a {
-    padding: 0.52rem 0.72rem;
-    font-size: 0.92rem;
-  }
-
-  .dir-toggle {
-    padding-inline: 1rem;
-  }
-
-  .local-nav {
-    padding: 0.9rem;
-    border-radius: 18px;
-  }
-
-  .panel {
-    padding: 1rem;
-  }
-
-  .table-wrap table {
-    min-width: 360px;
-  }
-
-  .table-wrap th,
-  .table-wrap td {
-    padding: 0.65rem 0.6rem;
-    font-size: 0.88rem;
-  }
-}
-
-@media (min-width: 576px) {
-
-  :root,
-  :host {
-    --pico-font-size: 106.25%;
-  }
-}
-
-@media (min-width: 768px) {
-
-  :root,
-  :host {
-    --pico-font-size: 112.5%;
-  }
-}
-
-@media (min-width: 1024px) {
-
-  :root,
-  :host {
-    --pico-font-size: 118.75%;
-  }
-}
-
-@media (min-width: 1280px) {
-
-  :root,
-  :host {
-    --pico-font-size: 125%;
-  }
-}
-
-@media (min-width: 1536px) {
-
-  :root,
-  :host {
-    --pico-font-size: 131.25%;
   }
 }
