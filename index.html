@@ -1,229 +1,240 @@
 <!doctype html>
 <html lang="de" dir="ltr">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';" />
-  <title>CO2-Transparenzatlas</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-</head>
-
-<body>
-  <div class="ambient" aria-hidden="true"></div>
-
-  <header class="site-header">
-    <div class="brand">
-      <div class="logo" aria-hidden="true">
-        <span>CAI</span>
-      </div>
-      <div class="brand-copy">
-        <p class="eyebrow">Climate Accountability Index</p>
-        <h1>CO2-Transparenzatlas</h1>
-        <p class="subtitle">
-          Emissionen von Ländern und Unternehmen sichtbar, nachvollziehbar und
-          filterbar.
-        </p>
-      </div>
-    </div>
-
-    <nav class="global-nav" aria-label="Hauptnavigation">
-      <a href="#ueberblick">Überblick</a>
-      <a href="#daten">Daten</a>
-      <a href="#methodik">Methodik</a>
-      <a href="#mitmachen">Mitmachen</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
-
-    <button class="dir-toggle" id="dirToggle" type="button" aria-pressed="false">
-      Schriftkultur: LTR
-    </button>
-  </header>
-
-  <main class="layout" id="main">
-    <aside class="local-nav reveal" aria-label="Seitenmenü">
-      <h2>Inhalt</h2>
-      <a href="#ueberblick">Warum Transparenz?</a>
-      <a href="#daten">CO2-Datenbank</a>
-      <a href="#methodik">Methodik</a>
-      <a href="#mitmachen">Mitmachen</a>
-      <a href="#kontakt">Kontakt</a>
-    </aside>
-
-    <div class="content">
-      <section id="ueberblick" class="panel reveal">
-        <h2>Mehr Klarheit für wirksamen Klimaschutz</h2>
-        <p>
-          Der CO2-Transparenzatlas macht Emissionen von Ländern und Unternehmen
-          greifbar. Wir bündeln fiktive, aber realitätsnahe Daten, damit sie
-          leicht vergleichbar und für Politik, Medien und Zivilgesellschaft
-          nutzbar werden.
-        </p>
-        <div class="stat-grid">
-          <article>
-            <h3>147</h3>
-            <p>Länderprofile</p>
-          </article>
-          <article>
-            <h3>520</h3>
-            <p>Unternehmen</p>
-          </article>
-          <article>
-            <h3>12</h3>
-            <p>Industriesektoren</p>
-          </article>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';"
+    />
+    <title>CO2-Transparenzatlas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true"></div>
+    <header class="site-header reveal" role="banner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img" aria-label="CO2-Transparenzatlas Logo">
+            <defs>
+              <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#8bc34a" />
+                <stop offset="100%" stop-color="#2f7d6b" />
+              </linearGradient>
+            </defs>
+            <circle cx="32" cy="32" r="30" fill="#0d2c2c" opacity="0.92" />
+            <path
+              d="M18 36c6-12 18-16 28-18-2 12-8 24-22 28-4 1-6-2-6-4z"
+              fill="url(#leaf)"
+            />
+            <path
+              d="M22 42c8-4 16-10 22-18"
+              fill="none"
+              stroke="#f7f1e1"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
         </div>
-      </section>
-
-      <section id="daten" class="panel reveal" x-data="emissionsApp()">
-        <div class="panel-header">
-          <div>
-            <h2>CO2-Emissionsdaten</h2>
-            <p class="muted">
-              Fiktive Datensätze, sortier- und filterbar nach Land und
-              Unternehmen.
-            </p>
-          </div>
-          <div class="result-count" aria-live="polite">
-            <span x-text="filteredRows.length"></span> Treffer
-          </div>
+        <div>
+          <p class="eyebrow">Climate Accountability Index</p>
+          <h1>CO2-Transparenzatlas</h1>
+          <p class="subtitle">Wer emittiert wie viel – sichtbar, nachvollziehbar, filterbar.</p>
         </div>
+      </div>
+      <nav class="global-nav" aria-label="Hauptnavigation">
+        <a href="#ueberblick">Überblick</a>
+        <a href="#daten">Daten</a>
+        <a href="#methodik">Methodik</a>
+        <a href="#mitmachen">Mitmachen</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <button class="dir-toggle" id="dirToggle" type="button" aria-pressed="false">
+        Schriftkultur: LTR
+      </button>
+    </header>
 
-        <form class="filters" @submit.prevent>
-          <label>
-            Land
-            <input type="search" name="country" placeholder="z. B. Deutschland" x-model="filters.country"
-              inputmode="search" autocomplete="off" />
-          </label>
-          <label>
-            Unternehmen
-            <input type="search" name="company" placeholder="z. B. NordWind" x-model="filters.company"
-              inputmode="search" autocomplete="off" />
-          </label>
-          <label>
-            Sektor
-            <select name="sector" x-model="filters.sector">
-              <option value="all">Alle</option>
-              <option value="Energie">Energie</option>
-              <option value="Industrie">Industrie</option>
-              <option value="Transport">Transport</option>
-              <option value="Landwirtschaft">Landwirtschaft</option>
-              <option value="Technologie">Technologie</option>
-            </select>
-          </label>
-          <label>
-            Sortierung
-            <select name="sort" x-model="sort.by">
-              <option value="country">Land</option>
-              <option value="company">Unternehmen</option>
-              <option value="emissions">Emissionen</option>
-            </select>
-          </label>
-          <button type="button" class="ghost" @click="toggleSortDir()">
-            Richtung:
-            <span x-text="sort.dir === 'asc' ? 'aufsteigend' : 'absteigend'"></span>
-          </button>
-          <button type="button" class="secondary" @click="resetFilters()">
-            Filter zurücksetzen
-          </button>
-        </form>
+    <main class="layout" id="main">
+      <aside class="local-nav reveal" aria-label="Seitenmenü">
+        <h2>Inhalt</h2>
+        <a href="#ueberblick">Warum Transparenz?</a>
+        <a href="#daten">CO2-Datenbank</a>
+        <a href="#methodik">Methodik</a>
+        <a href="#mitmachen">Mitmachen</a>
+        <a href="#kontakt">Kontakt</a>
+      </aside>
 
-        <div class="table-wrap" role="region" aria-label="CO2 Emissionsdaten">
-          <table>
-            <thead>
-              <tr>
-                <th scope="col">Land</th>
-                <th scope="col">Unternehmen</th>
-                <th scope="col">Sektor</th>
-                <th scope="col" class="align-right">
-                  Emissionen (Mt CO2e/Jahr)
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <template x-for="row in filteredRows" :key="row.id">
+      <div class="content">
+        <section id="ueberblick" class="panel reveal">
+          <h2>Mehr Klarheit für wirksamen Klimaschutz</h2>
+          <p>
+            Der CO2-Transparenzatlas macht Emissionen von Ländern und Unternehmen greifbar.
+            Wir bündeln fiktive, aber realitätsnahe Daten, damit sie leicht vergleichbar und
+            für Politik, Medien und Zivilgesellschaft nutzbar werden.
+          </p>
+          <div class="stat-grid">
+            <article>
+              <h3>147</h3>
+              <p>Länderprofile</p>
+            </article>
+            <article>
+              <h3>520</h3>
+              <p>Unternehmen</p>
+            </article>
+            <article>
+              <h3>12</h3>
+              <p>Industriesektoren</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="daten" class="panel reveal" x-data="emissionsApp()">
+          <div class="panel-header">
+            <div>
+              <h2>CO2-Emissionsdaten</h2>
+              <p class="muted">Fiktive Datensätze, sortier- und filterbar nach Land und Unternehmen.</p>
+            </div>
+            <div class="result-count" aria-live="polite">
+              <span x-text="filteredRows.length"></span> Treffer
+            </div>
+          </div>
+
+          <form class="filters" @submit.prevent>
+            <label>
+              Land
+              <input
+                type="search"
+                name="country"
+                placeholder="z. B. Deutschland"
+                x-model="filters.country"
+                inputmode="search"
+                autocomplete="off"
+              />
+            </label>
+            <label>
+              Unternehmen
+              <input
+                type="search"
+                name="company"
+                placeholder="z. B. NordWind"
+                x-model="filters.company"
+                inputmode="search"
+                autocomplete="off"
+              />
+            </label>
+            <label>
+              Sektor
+              <select name="sector" x-model="filters.sector">
+                <option value="all">Alle</option>
+                <option value="Energie">Energie</option>
+                <option value="Industrie">Industrie</option>
+                <option value="Transport">Transport</option>
+                <option value="Landwirtschaft">Landwirtschaft</option>
+                <option value="Technologie">Technologie</option>
+              </select>
+            </label>
+            <label>
+              Sortierung
+              <select name="sort" x-model="sort.by">
+                <option value="country">Land</option>
+                <option value="company">Unternehmen</option>
+                <option value="emissions">Emissionen</option>
+              </select>
+            </label>
+            <button type="button" class="ghost" @click="toggleSortDir()">
+              Richtung: <span x-text="sort.dir === 'asc' ? 'aufsteigend' : 'absteigend'"></span>
+            </button>
+            <button type="button" class="secondary" @click="resetFilters()">Filter zurücksetzen</button>
+          </form>
+
+          <div class="table-wrap" role="region" aria-label="CO2 Emissionsdaten">
+            <table>
+              <thead>
                 <tr>
-                  <td x-text="row.country"></td>
-                  <td x-text="row.company"></td>
-                  <td x-text="row.sector"></td>
-                  <td class="align-right" x-text="formatEmissions(row.emissions)"></td>
+                  <th scope="col">Land</th>
+                  <th scope="col">Unternehmen</th>
+                  <th scope="col">Sektor</th>
+                  <th scope="col" class="align-right">Emissionen (Mt CO2e/Jahr)</th>
                 </tr>
-              </template>
-            </tbody>
-          </table>
-        </div>
-        <p class="muted small">
-          Hinweis: Alle Werte sind fiktiv. Eingaben werden ausschließlich als
-          Text behandelt, damit kein injizierter Code ausgeführt werden kann.
-        </p>
-      </section>
-
-      <section id="methodik" class="panel reveal">
-        <h2>Methodik</h2>
-        <p>
-          Die Datensätze werden anhand nachvollziehbarer Kriterien erstellt:
-          Emissionsfaktoren, branchenspezifische Intensitäten und transparente
-          Annahmen. Jede Zahl lässt sich bis zur verwendeten Quelle
-          zurückverfolgen.
-        </p>
-        <ul class="checklist">
-          <li>Klare Definition der Systemgrenzen (Scope 1–3).</li>
-          <li>Vergleichbarkeit zwischen Ländern und Unternehmen.</li>
-          <li>Offenlegung aller Annahmen und Berechnungsschritte.</li>
-        </ul>
-      </section>
-
-      <section id="mitmachen" class="panel reveal">
-        <h2>Mitmachen</h2>
-        <p>
-          Du möchtest Daten beisteuern oder Unstimmigkeiten melden? Unser Team
-          nimmt Hinweise über das Kontaktformular entgegen und priorisiert
-          gemeinsam mit Partnerorganisationen.
-        </p>
-        <div class="cta">
-          <div>
-            <h3>Partner werden</h3>
-            <p>
-              Gemeinsam mehr Transparenz schaffen – mit offenen Daten und
-              verständlichen Reports.
-            </p>
+              </thead>
+              <tbody>
+                <template x-for="row in filteredRows" :key="row.id">
+                  <tr>
+                    <td x-text="row.country"></td>
+                    <td x-text="row.company"></td>
+                    <td x-text="row.sector"></td>
+                    <td class="align-right" x-text="formatEmissions(row.emissions)"></td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
           </div>
-          <button type="button">Kooperation anfragen</button>
-        </div>
-      </section>
+          <p class="muted small">
+            Hinweis: Alle Werte sind fiktiv. Eingaben werden ausschließlich als Text behandelt,
+            damit kein injizierter Code ausgeführt werden kann.
+          </p>
+        </section>
 
-      <section id="kontakt" class="panel reveal">
-        <h2>Kontakt</h2>
+        <section id="methodik" class="panel reveal">
+          <h2>Methodik</h2>
+          <p>
+            Die Datensätze werden anhand nachvollziehbarer Kriterien erstellt: Emissionsfaktoren,
+            branchenspezifische Intensitäten und transparente Annahmen. Jede Zahl lässt sich
+            bis zur verwendeten Quelle zurückverfolgen.
+          </p>
+          <ul class="checklist">
+            <li>Klare Definition der Systemgrenzen (Scope 1–3).</li>
+            <li>Vergleichbarkeit zwischen Ländern und Unternehmen.</li>
+            <li>Offenlegung aller Annahmen und Berechnungsschritte.</li>
+          </ul>
+        </section>
+
+        <section id="mitmachen" class="panel reveal">
+          <h2>Mitmachen</h2>
+          <p>
+            Du möchtest Daten beisteuern oder Unstimmigkeiten melden? Unser Team nimmt Hinweise
+            über das Kontaktformular entgegen und priorisiert gemeinsam mit Partnerorganisationen.
+          </p>
+          <div class="cta">
+            <div>
+              <h3>Partner werden</h3>
+              <p>Gemeinsam mehr Transparenz schaffen – mit offenen Daten und verständlichen Reports.</p>
+            </div>
+            <button type="button">Kooperation anfragen</button>
+          </div>
+        </section>
+
+        <section id="kontakt" class="panel reveal">
+          <h2>Kontakt</h2>
+          <p>
+            Climate Accountability Index<br />
+            Hafenstraße 12, 20457 Hamburg<br />
+            kontakt@climate-index.example
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer reveal">
+      <div>
+        <strong>Rechtliche Hinweise</strong>
         <p>
-          Climate Accountability Index<br />
-          Hafenstraße 12, 20457 Hamburg<br />
-          kontakt@climate-index.example
+          Impressum &middot; Datenschutz &middot; Nutzungsbedingungen &middot; Barrierefreiheit
         </p>
-      </section>
-    </div>
-  </main>
-
-  <footer class="site-footer reveal">
-    <div>
-      <strong>Rechtliche Hinweise</strong>
-      <p>
-        Impressum &middot; Datenschutz &middot; Nutzungsbedingungen &middot;
-        Barrierefreiheit
-      </p>
-    </div>
-    <p class="muted">
-      &copy; 2026 Climate Accountability Index. Alle Rechte vorbehalten.
-    </p>
-  </footer>
-</body>
-
+      </div>
+      <p class="muted">&copy; 2026 Climate Accountability Index. Alle Rechte vorbehalten.</p>
+    </footer>
+  </body>
 </html>
