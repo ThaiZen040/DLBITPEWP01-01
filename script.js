@@ -6,10 +6,10 @@ const initDirectionToggle = () => {
     const setDir = (dir) => { // Funktion zum Setzen der Schreibrichtung:
         document.documentElement.setAttribute("dir", dir);
         button.textContent = `Schriftkultur: ${dir.toUpperCase()}`;
-      
+
         if (dir === "rtl") { // Wenn die Schreibrichtung "rtl" ist, setze aria-pressed auf true, sonst auf false:
             button.setAttribute("aria-pressed", "true");
-        } else { 
+        } else {
             button.setAttribute("aria-pressed", "false");
         }
     };
@@ -56,13 +56,19 @@ const emissionsApp = () => ({
 
     // Die Filter für die Daten:
     filters: {
-        country: "", 
+        country: "",
         company: "",
         sector: "all"
     },
+    // Funktion zum Zurücksetzen der Filter:
+    resetFilters() {
+        this.filters = { country: "", company: "", sector: "all" };
+        this.sort = { by: "emissions", dir: "desc" };
+    },
     // Die Sortierung der Daten:
     sort: {
-    by: "emissions",
-    dir: "desc"
-  },
+        by: "emissions",
+        dir: "desc"
+    },
+
 })
