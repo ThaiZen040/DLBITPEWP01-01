@@ -73,33 +73,34 @@ const emissionsApp = () => ({
     }
 });
 
-const initDirectionToggle = () => {
-    const button = document.getElementById("dirToggle");
-    if (!button) return;
+function initDirectionToggle() {
+  const button = document.getElementById("dirToggle");
+
+  if (!button) {
+    return;
+  }
+
+  function setDir(dir) {
+    document.documentElement.setAttribute("dir", dir);
+    button.textContent = `Schriftkultur: ${dir.toUpperCase()}`;
+    button.setAttribute("aria-pressed", dir === "rtl" ? "true" : "false");
+  }
+
+  setDir(document.documentElement.getAttribute("dir") || "ltr");
+
+  button.addEventListener("click", function () {
+    let current = document.documentElement.getAttribute("dir");
+
+    if (!current) {
+      current = "ltr";
+    }
+
+    if (current === "rtl") {
+      setDir("ltr");
+    } else {
+      setDir("rtl");
+    }
+  });
 }
 
-    const setDir = (dir) => {
-        document.documentElement.setAttribute("dir", dir);
-        button.textContent = `Schriftkultur: ${dir.toUpperCase()}`;
-        button.setAttribute("aria-pressed", dir === "rtl" ? "true" : "false");
-    };
-
-    setDir(document.documentElement.getAttribute("dir") || "ltr");
-
-    button.addEventListener("click", function () {
-        let current = document.documentElement.getAttribute("dir");
-
-        if (!current) {
-            current = "ltr";
-        }
-
-        if (current === "rtl") {
-            setDir("ltr");
-        } else {
-            setDir("rtl");
-        }
-    });
-
-    document.addEventListener("DOMContentLoaded", () => {
-        initDirectionToggle();
-    });
+document.addEventListener("DOMContentLoaded", initDirectionToggle);
