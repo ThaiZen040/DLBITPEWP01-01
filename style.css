@@ -101,10 +101,10 @@ a:focus {
 }
 
 .logo {
-  width: 64px;
-  height: 64px;
-  min-width: 64px;
-  min-height: 64px;
+  width: 84px;
+  height: 84px;
+  min-width: 84px;
+  min-height: 84px;
   border-radius: 50%;
   background: var(--paper-strong);
   display: grid;
