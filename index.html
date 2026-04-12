@@ -58,7 +58,7 @@
       </div>
 
       <nav class="global-nav reveal" aria-label="Hauptnavigation">
-        <a href="#ueberblick">Überblick</a>
+        <a href="#ueberblick">Ueberblick</a>
         <a href="#daten">Daten</a>
         <a href="#methodik">Methodik</a>
         <a href="#mitmachen">Mitmachen</a>
@@ -91,7 +91,7 @@
           <div class="stat-grid">
             <article>
               <h3>147</h3>
-              <p>Länderprofile</p>
+              <p>Laenderprofile</p>
             </article>
             <article>
               <h3>520</h3>
@@ -122,8 +122,7 @@
                 type="search"
                 name="country"
                 placeholder="z. B. Deutschland"
-                x-model="filters.country"
-                @input="sanitizeFilter('country')"
+                x-model="countryQuery"
                 inputmode="search"
                 autocomplete="off"
               />
@@ -134,15 +133,14 @@
                 type="search"
                 name="company"
                 placeholder="z. B. NordWind"
-                x-model="filters.company"
-                @input="sanitizeFilter('company')"
+                x-model="companyQuery"
                 inputmode="search"
                 autocomplete="off"
               />
             </label>
             <label>
               Sektor
-              <select name="sector" x-model="filters.sector">
+              <select name="sector" x-model="selectedSector">
                 <option value="all">Alle</option>
                 <option value="Energie">Energie</option>
                 <option value="Industrie">Industrie</option>
@@ -153,7 +151,7 @@
             </label>
             <label>
               Sortierung
-              <select name="sort" x-model="sort.by">
+              <select name="sort" x-model="sortBy">
                 <option value="country">Land</option>
                 <option value="company">Unternehmen</option>
                 <option value="emissions">Emissionen</option>
