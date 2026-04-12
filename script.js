@@ -121,25 +121,11 @@ document.addEventListener("DOMContentLoaded", initDirectionToggle);
 document.addEventListener("alpine:init", () => {
   Alpine.data("emissionsApp", () => ({
     rows: emissionsRows,
-
-    filters: {
-      country: "",
-      company: "",
-      sector: "all",
-    },
-
-    sort: {
-      by: "emissions",
-      dir: "desc",
-    },
-
-    sanitize(value) {
-      return sanitizeTextInput(value);
-    },
-
-    sanitizeFilter(field) {
-      this.filters[field] = this.sanitize(this.filters[field]);
-    },
+    countryQuery: "",
+    companyQuery: "",
+    selectedSector: "all",
+    sortBy: "emissions",
+    sortDir: "desc",
 
     formatEmissions(value) {
       return Number(value).toLocaleString("de-DE", {
@@ -149,25 +135,25 @@ document.addEventListener("alpine:init", () => {
     },
 
     toggleSortDir() {
-      if (this.sort.dir === "asc") {
-        this.sort.dir = "desc";
+      if (this.sortDir === "asc") {
+        this.sortDir = "desc";
       } else {
-        this.sort.dir = "asc";
+        this.sortDir = "asc";
       }
     },
 
     resetFilters() {
-      this.filters.country = "";
-      this.filters.company = "";
-      this.filters.sector = "all";
-      this.sort.by = "emissions";
-      this.sort.dir = "desc";
+      this.countryQuery = "";
+      this.companyQuery = "";
+      this.selectedSector = "all";
+      this.sortBy = "emissions";
+      this.sortDir = "desc";
     },
 
     get filteredRows() {
-      const country = normalizeInput(this.filters.country);
-      const company = normalizeInput(this.filters.company);
-      const sector = this.filters.sector;
+      const country = normalizeInput(this.countryQuery);
+      const company = normalizeInput(this.companyQuery);
+      const sector = this.selectedSector;
 
       const filtered = this.rows.filter((row) => {
         const matchCountry = !country || row.country.toLocaleLowerCase("de-DE").includes(country);
@@ -178,18 +164,18 @@ document.addEventListener("alpine:init", () => {
       });
 
       return filtered.slice().sort((a, b) => {
-        const left = a[this.sort.by];
-        const right = b[this.sort.by];
+        const left = a[this.sortBy];
+        const right = b[this.sortBy];
 
         if (typeof left === "number" && typeof right === "number") {
-          if (this.sort.dir === "asc") {
+          if (this.sortDir === "asc") {
             return left - right;
           }
 
           return right - left;
         }
 
-        if (this.sort.dir === "asc") {
+        if (this.sortDir === "asc") {
           return String(left).localeCompare(String(right), "de");
         }
 
@@ -206,7 +192,7 @@ document.addEventListener("alpine:init", () => {
     },
 
     get sortDirectionLabel() {
-      if (this.sort.dir === "asc") {
+      if (this.sortDir === "asc") {
         return "aufsteigend";
       }
 
