@@ -334,6 +334,7 @@ a:focus {
   width: 100%;
   border-collapse: collapse;
   min-width: 540px;
+  background: var(--paper);
 }
 
 .table-wrap thead {
