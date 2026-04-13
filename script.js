@@ -20,6 +20,7 @@ const emissionsRows = Object.freeze([
   { id: 19, country: "China", company: "Pearl River Manufacturing", sector: "Industrie", emissions: 34.7 },
   { id: 20, country: "Japan", company: "Shinkai Agriculture", sector: "Landwirtschaft", emissions: 12.3 },
   { id: 21, country: "Indien", company: "Ganga Textiles", sector: "Industrie", emissions: 400.5 },
+  { id: 22, country: "Thailand", company: "Siam Tech", sector: "Technologie", emissions: 27.8 },
 ]);
 
 const SAFE_DIRECTIONS = new Set(["ltr", "rtl"]);
