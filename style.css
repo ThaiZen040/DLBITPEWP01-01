@@ -206,6 +206,7 @@ a:focus {
 .local-nav h2 {
   margin: 0;
   font-size: 1.1rem;
+  color: var(--storm);
 }
 
 .local-nav a {
@@ -213,6 +214,8 @@ a:focus {
   border-left: 3px solid transparent;
   border-radius: 10px;
   transition: border 0.2s ease, background 0.2s ease;
+    color: var(--ink-soft);
+    font-weight: 600;
 }
 
 [dir="rtl"] .local-nav a {
@@ -224,6 +227,17 @@ a:focus {
 .local-nav a:focus {
   border-color: var(--leaf);
   background: rgba(127, 176, 105, 0.12);
+  color: var(--storm);
+}
+
+.panel p,
+.panel li {
+  color: var(--ink-soft);
+}
+
+.stat-grid article p {
+  color: var(--ink-soft);
+  font-weight: 600;
 }
 
 .content {
@@ -402,6 +416,16 @@ a:focus {
   cursor: pointer;
 }
 
+.cta h3 {
+  color: var(--storm);
+}
+
+.cta p {
+  color: var(--ink-soft);
+}
+
+
+
 .site-footer {
   padding: 2rem clamp(1.5rem, 4vw, 4rem) 3rem;
   border-top: 1px solid rgba(31, 54, 49, 0.08);
@@ -413,7 +437,12 @@ a:focus {
 }
 
 .muted {
-  color: rgba(13, 44, 44, 0.7);
+  color: var(--muted);
+}
+
+.panel p.muted,
+.site-footer .muted {
+  color: var(--muted);
 }
 
 .small {
