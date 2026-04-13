@@ -436,6 +436,10 @@ a:focus {
   justify-content: space-between;
 }
 
+.site-footer strong {
+  color: var(--storm);
+}
+
 .muted {
   color: var(--muted);
 }
@@ -540,6 +544,10 @@ a:focus {
     border-radius: 18px;
   }
 
+.panel p.muted,
+.site-footer .muted {
+  color: var(--muted);
+}
   .local-nav {
     padding: 1.2rem;
   }
