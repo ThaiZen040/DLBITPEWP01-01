@@ -13,9 +13,13 @@ const emissionsRows = Object.freeze([
   { id: 12, country: "Suedkorea", company: "Haneul Tech", sector: "Technologie", emissions: 22.2 },
   { id: 13, country: "China", company: "Pearl River Manufacturing", sector: "Industrie", emissions: 210.3 },
   { id: 14, country: "Australien", company: "Southern LNG", sector: "Energie", emissions: 91.6 },
-  { id: 15, country: "Suedafrika", company: "Cape Cement", sector: "Industrie", emissions: 48.9 },
+  { id: 15, country: "Südafrika", company: "Cape Cement", sector: "Industrie", emissions: 48.9 },
   { id: 16, country: "Norwegen", company: "Arctic Shipping", sector: "Transport", emissions: 15.4 },
-  { id: 17, country: "Vereinigtes Koenigreich", company: "Britannia Renewables", sector: "Energie", emissions: 29.5 },
+  { id: 17, country: "Vereinigtes Königreich", company: "Britannia Renewables", sector: "Energie", emissions: 29.5 },
+  { id: 18, country: "Thailand", company: "Siam Transport", sector: "Transport", emissions: 27.8 },
+  { id: 19, country: "China", company: "Pearl River Manufacturing", sector: "Industrie", emissions: 34.7 },
+  { id: 20, country: "Japan", company: "Shinkai Agriculture", sector: "Landwirtschaft", emissions: 12.3 },
+  { id: 21, country: "Indien", company: "Ganga Textiles", sector: "Industrie", emissions: 400.5 },
 ]);
 
 const SAFE_DIRECTIONS = new Set(["ltr", "rtl"]);
