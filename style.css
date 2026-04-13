@@ -1,17 +1,18 @@
 /* Farbpalette Pico*/
 :root {
-  --ink: #030000;
-  --ink-soft: #000000;
+  --ink: #1b3430;
+  --ink-soft: #405b55;
   --paper: #f4f1e9;
   --paper-strong: #fff8ea;
   --clay: #d7d0c4;
   --ocean: #1f6f6a;
   --leaf: #7fb069;
   --sun: #f2b84b;
-  --storm: #000000;
+  --storm: #102824;
   --accent: #f47c48;
   --radius: 22px;
   --shadow: 0 16px 45px rgba(7, 30, 25, 0.18);
+  --muted: #6a7d78;
 }
 
 
@@ -147,10 +148,13 @@ a:focus {
   border-radius: 999px;
   border: 1px solid transparent;
   transition: border 0.2s ease, color 0.2s ease, background 0.2s ease;
+  color: var(--ink-soft);
+  font-weight: 600;
 }
 
 .global-nav a:hover,
 .global-nav a:focus {
+  color: var(--storm);
   border-color: rgba(31, 111, 106, 0.4);
   background: rgba(31, 111, 106, 0.08);
 }
