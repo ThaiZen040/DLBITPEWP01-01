@@ -1,5 +1,5 @@
 /* Farbpalette Pico*/
-:root {
+:root { 
   --ink: #1b3430;
   --ink-soft: #405b55;
   --paper: #f4f1e9;
@@ -15,7 +15,7 @@
   --muted: #6a7d78;
 }
 
-
+/* Grundlegende Stile für die gesamte Seite, die die Schriftgröße, das Scrollverhalten und den Hintergrund festlegen, um eine angenehme Benutzererfahrung zu gewährleisten. */
 html {
   scroll-behavior: smooth;
   background:
@@ -24,6 +24,7 @@ html {
   overflow-x: clip;
 }
 
+/* Box-Sizing auf Border-Box setzen, um die Berechnung von Breiten und Höhen zu vereinfachen und konsistenter zu gestalten, indem Padding und Border in die Gesamtgröße eines Elements einbezogen werden. */
 * {
   box-sizing: border-box;
 }
@@ -34,10 +35,10 @@ html {
 /* Ermöglicht eine bessere Kontrolle über das Design von Eingabefeldern, Buttons und anderen interaktiven Elementen */
 
 body {
-  font-family: "IBM Plex Serif", "Georgia", serif;
-  line-height: 1.7;
+  font-family: "IBM Plex Serif", "Georgia", serif; /* Setzt die Schriftart für den gesamten Body auf "IBM Plex Serif" mit Fallbacks, um eine elegante und gut lesbare Typografie zu gewährleisten. */
+  line-height: 1.7; /* Erhöht den Zeilenabstand, um die Lesbarkeit zu verbessern und ein angenehmes Leseerlebnis zu bieten. */
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Verhindert horizontales Scrollen, um die Benutzererfahrung zu verbessern und sicherzustellen, dass die Seite auf allen Bildschirmgrößen gut aussieht. */
   width: 100%;
   max-width: 100%;
   overflow-x: clip;
@@ -101,6 +102,7 @@ a:focus {
   max-width: none;
 }
 
+/* Stile für das Logo, das als zentrales visuelles Element dient und die Markenidentität stärkt, indem es eine auffällige und ansprechende Gestaltung aufweist. */
 .logo {
   width: 84px;
   height: 84px;
@@ -108,10 +110,10 @@ a:focus {
   min-height: 84px;
   border-radius: 50%;
   background: var(--paper-strong);
-  display: grid;
-  place-items: center;
+  display: grid; /* Verwendet CSS Grid, um den SVG-Inhalt innerhalb des Logos zu positionieren, was eine einfache und effektive Methode ist, um die Elemente zu zentrieren. */
+  place-items: center; /* Zentriert den SVG-Inhalt sowohl horizontal als auch vertikal, um eine ausgewogene und ansprechende Präsentation des Logos zu gewährleisten. */
   box-shadow: inset 0 0 0 6px rgba(255, 255, 255, 0.7);
-  overflow: hidden;
+  overflow: hidden; 
   flex-shrink: 0;
 }
 
@@ -121,7 +123,7 @@ a:focus {
   display: block;
 }
 
-
+/* Stile für die Überschrift, die als Haupttitel der Seite dient und durch eine klare Hierarchie und ansprechende Typografie die Aufmerksamkeit der Benutzer auf sich zieht. */
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.3em;
@@ -130,12 +132,14 @@ a:focus {
   margin-bottom: 0.35rem;
 }
 
+/* Stile für die Unterüberschrift, die zusätzliche Informationen oder Kontext zum Haupttitel bietet und durch eine subtile Farbgebung und kleinere Schriftgröße eine klare visuelle Hierarchie schafft. */
 .subtitle {
   margin: 0.3rem 0 0;
   color: var(--ink-soft);
   font-size: 1rem;
 }
 
+/*  Stile für die globale Navigation, die als Hauptmenü der Seite dient und durch eine klare Anordnung und ansprechende Interaktionseffekte eine einfache und intuitive Navigation ermöglicht. */
 .global-nav {
   display: flex;
   flex-wrap: wrap;
@@ -143,6 +147,7 @@ a:focus {
   font-family: "Space Grotesk", sans-serif;
 }
 
+/* Stile für die Links in der globalen Navigation, die durch abgerundete Ecken, sanfte Übergänge und eine subtile Farbgebung eine ansprechende und benutzerfreundliche Navigation bieten. */
 .global-nav a {
   padding: 0.3rem 0.8rem;
   border-radius: 999px;
@@ -159,17 +164,17 @@ a:focus {
   background: rgba(31, 111, 106, 0.08);
 }
 
-.dir-toggle {
-  justify-self: start;
-  background: var(--storm);
-  color: #fefaf2;
-  border-radius: 999px;
+.dir-toggle { /* Stile für den Richtungsumschalter, der es Benutzern ermöglicht, die Textausrichtung von links nach rechts (LTR) oder rechts nach links (RTL) zu wechseln, um die Zugänglichkeit und Benutzerfreundlichkeit für verschiedene Sprachen und Leserrichtungen zu verbessern. */
+  justify-self: start; /* Positioniert den Umschalter am Anfang des verfügbaren Platzes, um eine intuitive Platzierung zu gewährleisten, die leicht zugänglich ist. */
+  background: var(--storm); /* Setzt den Hintergrund des Umschalters auf die Farbe im Pico-Farbschema, um eine starke visuelle Präsenz zu schaffen und die Aufmerksamkeit der Benutzer auf dieses wichtige Steuerelement zu lenken. */
+  color: #fefaf2; 
+  border-radius: 999px; /* Verleiht dem Umschalter eine vollständig abgerundete Form, um ein modernes und ansprechendes Design zu erzielen, das gut zum restlichen Stil der Seite passt. */
   padding: 0.5rem 1.4rem;
   font-family: "Space Grotesk", sans-serif;
   border: none;
-  cursor: pointer;
+  cursor: pointer; /* Ändert den Cursor beim Überfahren des Umschalters, um anzuzeigen, dass es sich um ein interaktives Element handelt, das angeklickt werden kann. */
   box-shadow: var(--shadow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Fügt eine sanfte Animation hinzu, wenn der Benutzer mit dem Umschalter interagiert, um ein ansprechenderes und dynamischeres Benutzererlebnis zu schaffen. */
 }
 
 .dir-toggle:hover {
@@ -186,11 +191,13 @@ a:focus {
   align-items: start;
 }
 
+/* Stile für die Layout-Struktur, die eine klare Trennung zwischen dem Hauptinhalt und der lokalen Navigation ermöglicht, indem sie ein zweispaltiges Grid-Layout verwendet, das sich an verschiedene Bildschirmgrößen anpasst. */
 [dir="rtl"] .layout {
   grid-template-columns: minmax(0, 1fr) minmax(220px, 260px);
   grid-template-areas: "content local";
 }
 
+/* Stile für die lokale Navigation, die als sekundäres Menü oder Inhaltsverzeichnis dient und durch eine klare Anordnung, ansprechende Interaktionseffekte und eine visuelle Hervorhebung der aktiven Links eine einfache und intuitive Navigation innerhalb des Seiteninhalts ermöglicht. */
 .local-nav {
   grid-area: local;
   padding: 1.5rem;
@@ -203,24 +210,26 @@ a:focus {
   top: 1.5rem;
 }
 
+/* Stile für die Überschrift der lokalen Navigation, die durch eine klare Typografie und eine subtile Farbgebung eine visuelle Hierarchie schafft und die Benutzer auf die Navigation innerhalb des Seiteninhalts aufmerksam macht. */
 .local-nav h2 {
   margin: 0;
   font-size: 1.1rem;
   color: var(--storm);
 }
 
+/* Stile für die Links in der lokalen Navigation, die durch abgerundete Ecken, sanfte Übergänge und eine subtile Farbgebung eine ansprechende und benutzerfreundliche Navigation bieten, um die Benutzer bei der Erkundung des Seiteninhalts zu unterstützen. */
 .local-nav a {
   padding: 0.35rem 0.5rem;
   border-left: 3px solid transparent;
   border-radius: 10px;
-  transition: border 0.2s ease, background 0.2s ease;
+  transition: border 0.2s ease, background 0.2s ease; /* Fügt eine sanfte Animation hinzu, wenn der Benutzer mit den Links in der lokalen Navigation interagiert, um ein ansprechenderes und dynamischeres Benutzererlebnis zu schaffen. */
     color: var(--ink-soft);
     font-weight: 600;
 }
 
-[dir="rtl"] .local-nav a {
-  border-left: none;
-  border-right: 3px solid transparent;
+[dir="rtl"] .local-nav a { /* Stile für die Links in der lokalen Navigation, wenn die Textausrichtung auf rechts nach links (RTL) eingestellt ist, um sicherzustellen, dass die visuelle Hervorhebung der aktiven Links korrekt positioniert ist und die Benutzerfreundlichkeit für RTL-Sprachen gewährleistet ist. */
+  border-left: none; /* Entfernt die linke Border, die in der LTR-Ansicht verwendet wird, um die aktive Links zu markieren, da sie in der RTL-Ansicht nicht korrekt positioniert wäre. */
+  border-right: 3px solid transparent; /* Fügt stattdessen eine rechte Border hinzu, um die aktive Links in der RTL-Ansicht zu markieren, und stellt sicher, dass die visuelle Hervorhebung konsistent und intuitiv bleibt, unabhängig von der Textausrichtung. */
 }
 
 .local-nav a:hover,
@@ -235,7 +244,7 @@ a:focus {
   color: var(--ink-soft);
 }
 
-.stat-grid article p {
+.stat-grid article p { /* Stile für die Absätze innerhalb der Statistik-Grid-Artikel, die durch eine subtile Farbgebung und eine klare Typografie eine angenehme und gut lesbare Präsentation der statistischen Informationen bieten. */
   color: var(--ink-soft);
   font-weight: 600;
 }
@@ -246,7 +255,7 @@ a:focus {
   gap: 2rem;
 }
 
-.panel {
+.panel { /* Stile für die Panels, die als Container für verschiedene Abschnitte oder Inhalte dienen und durch eine klare Abgrenzung, ansprechende Typografie und eine subtile Farbgebung eine angenehme und gut strukturierte Präsentation der Informationen bieten. */
   background: rgba(255, 255, 255, 0.88);
   border-radius: var(--radius);
   padding: clamp(1.5rem, 3vw, 2.2rem);
@@ -254,7 +263,7 @@ a:focus {
   border: 1px solid rgba(31, 54, 49, 0.08);
 }
 
-.panel-header {
+.panel-header { /* Stile für die Kopfzeile eines Panels, die durch eine klare Typografie, eine subtile Farbgebung und eine ansprechende Anordnung der Elemente eine visuelle Hierarchie schafft und die Benutzer auf den Inhalt des Panels aufmerksam macht. */
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -263,7 +272,7 @@ a:focus {
   margin-bottom: 1.5rem;
 }
 
-.result-count {
+.result-count { /* Stile für die Ergebnisanzahl, die die Anzahl der angezeigten Ergebnisse in einem Filter- oder Suchergebnisbereich hervorhebt, um den Benutzern eine klare und sofortige Rückmeldung über die Anzahl der gefundenen Elemente zu geben. */
   background: rgba(31, 111, 106, 0.12);
   color: var(--storm);
   padding: 0.4rem 0.9rem;
@@ -275,7 +284,8 @@ a:focus {
   color: var(--storm);
   font-weight: 600;
 }
-
+/* Stile für die Filter, die es Benutzern ermöglichen, die angezeigten Daten basierend auf verschiedenen Kriterien zu verfeinern, und durch eine klare Anordnung, ansprechende Interaktionseffekte und eine subtile Farbgebung eine benutzerfreundliche und effektive Filterung ermöglichen. */
+/* Die Filter umfassen Eingabefelder, Dropdowns und Buttons, die alle so gestaltet sind, dass sie gut zum restlichen Stil der Seite passen und eine konsistente Benutzererfahrung bieten. */
 .filters input,
 .filters select,
 .filters button {
@@ -375,6 +385,7 @@ a:focus {
   font-size: 2rem;
 }
 
+/* Stile für die Checkliste, die als visuelle Darstellung von Aufgaben oder Punkten dient und durch klare Abgrenzungen, ansprechende Typografie und eine subtile Farbgebung eine angenehme und gut strukturierte Präsentation der Informationen bietet. */
 .checklist {
   list-style: none;
   padding: 0;
@@ -382,11 +393,13 @@ a:focus {
   gap: 0.8rem;
 }
 
+/* Stile für die Listenelemente in der Checkliste, die durch eine klare Anordnung, ansprechende Typografie und eine visuelle Hervorhebung der abgeschlossenen Punkte eine benutzerfreundliche und effektive Darstellung von Aufgaben oder Punkten bieten. */
 .checklist li {
   padding-left: 2rem;
   position: relative;
 }
 
+/* Stile für die Pseudo-Elemente vor den Listenelementen in der Checkliste, die als visuelle Indikatoren für abgeschlossene Aufgaben oder Punkte dienen und durch eine klare Gestaltung und Farbgebung eine sofortige Erkennung ermöglichen. */
 .checklist li::before {
   content: "✓";
   position: absolute;
@@ -396,14 +409,15 @@ a:focus {
   font-weight: 700;
 }
 
+/* Stile für die Call-to-Action (CTA)-Sektion, die als auffälliger und ansprechender Bereich dient, um Benutzer zu bestimmten Aktionen zu ermutigen, und durch eine klare Anordnung, ansprechende Typografie und eine subtile Farbgebung eine effektive Präsentation der Informationen bietet. */
 .cta {
   margin-top: 1.5rem;
   background: linear-gradient(120deg, rgba(244, 124, 72, 0.15), rgba(127, 176, 105, 0.2));
   padding: 1.5rem;
   border-radius: 18px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  display: flex; /* Verwendet Flexbox, um die Elemente innerhalb der CTA-Sektion anzuordnen, was eine einfache und effektive Methode ist, um die Inhalte zu organisieren und eine ansprechende Präsentation zu gewährleisten. */
+  flex-wrap: wrap; /* Ermöglicht das Umfließen der Elemente innerhalb der CTA-Sektion, um sicherzustellen, dass die Inhalte auf verschiedenen Bildschirmgrößen gut aussehen und eine flexible Anordnung bieten. */
+  gap: 1rem; 
   align-items: center;
   justify-content: space-between;
 }
@@ -418,17 +432,19 @@ a:focus {
   cursor: pointer;
 }
 
+/*  Stile für die Überschrift innerhalb der Call-to-Action (CTA)-Sektion, die durch eine klare Typografie und eine subtile Farbgebung eine visuelle Hierarchie schafft und die Benutzer auf die gewünschten Aktionen aufmerksam macht. */
 .cta h3 {
   color: var(--storm);
 }
 
+/* Stile für die Absätze innerhalb der Call-to-Action (CTA)-Sektion, die durch eine subtile Farbgebung und eine klare Typografie eine angenehme und gut lesbare Präsentation der Informationen bieten, um die Benutzer zu ermutigen, die gewünschten Aktionen durchzuführen. */
 .cta p {
   color: var(--ink-soft);
 }
 
 
 
-.site-footer {
+.site-footer { /* Stile für die Fußzeile der Seite, die als abschließender Bereich dient, um zusätzliche Informationen, Links oder Kontaktinformationen bereitzustellen, und durch eine klare Anordnung, ansprechende Typografie und eine subtile Farbgebung eine angenehme und gut strukturierte Präsentation der Informationen bietet. */
   padding: 2rem clamp(1.5rem, 4vw, 4rem) 3rem;
   border-top: 1px solid rgba(31, 54, 49, 0.08);
   background: rgba(255, 255, 255, 0.8);
@@ -460,6 +476,7 @@ a:focus {
   opacity: 0;
 }
 
+/* Stile für die "reveal"-Klasse, die Elemente mit einer "floatIn"-Animation einblendet, um eine ansprechende und dynamische Benutzererfahrung zu schaffen, indem sie die Elemente sanft aufblendet und leicht nach oben bewegt, wenn sie in den Viewport gelangen. */
 .reveal:nth-child(2) {
   animation-delay: 0.15s;
 }
@@ -468,18 +485,20 @@ a:focus {
   animation-delay: 0.3s;
 }
 
+/* Stile für die "floatIn"-Animation, die Elemente mit einem sanften Aufblendeffekt und einer leichten Aufwärtsbewegung einblendet, um eine ansprechende und dynamische Benutzererfahrung zu schaffen. */
 @keyframes floatIn {
-  from {
+  from { /* Startet die Animation mit einer Opazität von 0 und einer leichten Verschiebung nach unten, um einen sanften Aufblendeffekt zu erzeugen, der die Aufmerksamkeit der Benutzer auf die Elemente lenkt, wenn sie in den Viewport gelangen. */
     opacity: 0;
     transform: translateY(16px);
   }
 
-  to {
+  to { /* Beendet die Animation mit einer Opazität von 1 und einer Rückkehr zur ursprünglichen Position, um eine klare und ansprechende Präsentation der Elemente zu gewährleisten, sobald sie vollständig eingeblendet sind. */
     opacity: 1;
     transform: translateY(0);
   }
 }
 
+/* Stile für die Animationseffekte, die durch die "reveal"-Klasse angewendet werden, um Elemente mit einem sanften Aufblendeffekt und einer leichten Aufwärtsbewegung einzublenden, was eine ansprechende und dynamische Benutzererfahrung schafft. */
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     animation: none;
@@ -487,6 +506,7 @@ a:focus {
   }
 }
 
+/* Responsive Stile, die sicherstellen, dass die Seite auf verschiedenen Bildschirmgrößen gut aussieht und eine optimale Benutzererfahrung bietet, indem sie die Anordnung der Elemente anpasst, die Sichtbarkeit bestimmter Komponenten steuert und die Interaktionseffekte entsprechend optimiert. */
 @media (max-width: 960px) {
   .site-header {
     gap: 1.2rem;

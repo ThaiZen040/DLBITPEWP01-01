@@ -1,4 +1,4 @@
-const emissionsRows = Object.freeze([
+const emissionsRows = Object.freeze([  
   { id: 1, country: "Deutschland", company: "NordWind Energie", sector: "Energie", emissions: 82.4 },
   { id: 2, country: "Deutschland", company: "RheinMetallurgy", sector: "Industrie", emissions: 45.2 },
   { id: 3, country: "Frankreich", company: "Lumiere Logistics", sector: "Transport", emissions: 31.7 },
@@ -23,53 +23,53 @@ const emissionsRows = Object.freeze([
   { id: 22, country: "Thailand", company: "Siam Tech", sector: "Technologie", emissions: 27.8 },
 ]);
 
-const SAFE_DIRECTIONS = new Set(["ltr", "rtl"]);
-const RTL_LANGUAGE_PREFIXES = ["ar", "dv", "fa", "he", "ku", "ps", "sd", "ug", "ur", "yi"];
+const SAFE_DIRECTIONS = new Set(["ltr", "rtl"]); // Funktion für sichere Richtungswerte, um Missbrauch zu verhindern.
+const RTL_LANGUAGE_PREFIXES = ["ar", "dv", "fa", "he", "ku", "ps", "sd", "ug", "ur", "yi"]; // Liste von Sprachpräfixen, die typischerweise von rechts nach links gelesen werden.
 
-function sanitizeTextInput(value) {
-  let text;
+function sanitizeTextInput(value) { // Funktion zur Bereinigung von Texteingaben, um potenzielle Sicherheitsrisiken zu minimieren.
+  let text; 
 
-  if (value) {
+  if (value) { // Überprüfen, ob der Wert definiert und nicht leer ist, bevor er in einen String umgewandelt wird.
     text = String(value);
   } else {
     text = "";
   }
 
-  text = text.replace(/[<>]/g, "");
-  text = text.trim();
+  text = text.replace(/[<>]/g, ""); // Entfernen von spitzen Klammern, um die Möglichkeit von HTML-Injektionen zu reduzieren.
+  text = text.trim(); // Entfernen von führenden und nachfolgenden Leerzeichen, um die Eingabe zu normalisieren.
 
   return text;
 }
 
-function normalizeInput(value) {
+function normalizeInput(value) { // Funktion zur Normalisierung von Eingaben, um eine konsistente Verarbeitung zu gewährleisten.
   return sanitizeTextInput(value).toLocaleLowerCase("de-DE");
 }
 
-function isRtlLocale(locale) {
+function isRtlLocale(locale) { // Funktion zur Überprüfung, ob eine gegebene Sprache typischerweise von rechts nach links gelesen wird, basierend auf bekannten Sprachpräfixen.
   const normalizedLocale = locale.toLocaleLowerCase();
 
-  return RTL_LANGUAGE_PREFIXES.some((prefix) => {
+  return RTL_LANGUAGE_PREFIXES.some((prefix) => { // Überprüfen, ob der normalisierte Sprachcode mit einem der RTL-Präfixe übereinstimmt oder mit einem Bindestrich gefolgt von weiteren Informationen beginnt (z.B. "ar-EG").
     return normalizedLocale === prefix || normalizedLocale.startsWith(`${prefix}-`);
   });
 }
 
-function detectPreferredDirection() {
+function detectPreferredDirection() { // Funktion zur Erkennung der bevorzugten Schreibrichtung basierend auf den Spracheinstellungen des Browsers.
   const locales = Array.isArray(navigator.languages) && navigator.languages.length > 0
-    ? navigator.languages
-    : [navigator.language].filter(Boolean);
+    ? navigator.languages // Wenn navigator.languages verfügbar und nicht leer ist, verwenden wir diese Liste von Sprachen.
+    : [navigator.language].filter(Boolean); // Ansonsten verwenden wir navigator.language, falls es definiert ist, und filtern falsy Werte heraus.
 
-  if (locales.some(isRtlLocale)) {
+  if (locales.some(isRtlLocale)) { // Wenn eine der erkannten Sprachen eine RTL-Sprache ist, geben wir "rtl" zurück.
     return "rtl";
   }
 
   return "ltr";
 }
 
-function getStoredDirection() {
+function getStoredDirection() { // Funktion zum Abrufen der gespeicherten Schreibrichtung aus localStorage, mit Fehlerbehandlung für den Fall, dass localStorage nicht verfügbar ist oder ungültige Daten enthält.
   try {
-    const storedDirection = localStorage.getItem("co2-atlas-direction");
+    const storedDirection = localStorage.getItem("co2-atlas-direction"); // Versuchen, die gespeicherte Schreibrichtung abzurufen.
 
-    if (SAFE_DIRECTIONS.has(storedDirection)) {
+    if (SAFE_DIRECTIONS.has(storedDirection)) { // Überprüfen, ob der abgerufene Wert eine gültige Schreibrichtung ist, bevor er zurückgegeben wird.
       return storedDirection;
     }
   } catch {
@@ -79,38 +79,38 @@ function getStoredDirection() {
   return null;
 }
 
-function storeDirection(direction) {
+function storeDirection(direction) { // Funktion zum Speichern der aktuellen Schreibrichtung in localStorage, mit Fehlerbehandlung für den Fall, dass localStorage nicht verfügbar ist.
   try {
-    localStorage.setItem("co2-atlas-direction", direction);
+    localStorage.setItem("co2-atlas-direction", direction); // Versuchen, die aktuelle Schreibrichtung zu speichern.
   } catch {
     // localStorage is optional.
   }
 }
 
-function applyDirection(direction) {
-  const safeDirection = SAFE_DIRECTIONS.has(direction) ? direction : "ltr";
-  const button = document.getElementById("dirToggle");
+function applyDirection(direction) { // Funktion zur Anwendung der angegebenen Schreibrichtung auf das Dokument, mit Sicherheitsüberprüfung und Aktualisierung des Toggle-Buttons.
+  const safeDirection = SAFE_DIRECTIONS.has(direction) ? direction : "ltr"; //  Überprüfen, ob die angegebene Schreibrichtung gültig ist, und andernfalls auf "ltr" zurücksetzen, um Missbrauch zu verhindern.
+  const button = document.getElementById("dirToggle"); // Abrufen des Toggle-Buttons, um dessen Zustand entsprechend der aktuellen Schreibrichtung zu aktualisieren.
 
-  document.documentElement.setAttribute("dir", safeDirection);
+  document.documentElement.setAttribute("dir", safeDirection); // Anwenden der sicheren Schreibrichtung auf das HTML-Element, um die Schreibrichtung der gesamten Seite zu steuern.
 
   if (button) {
-    button.textContent = `Schriftkultur: ${safeDirection.toUpperCase()}`;
+    button.textContent = `Schriftkultur: ${safeDirection.toUpperCase()}`; // Aktualisieren des Textinhalts des Toggle-Buttons, um die aktuelle Schreibrichtung anzuzeigen.
     button.setAttribute("aria-pressed", safeDirection === "rtl" ? "true" : "false");
   }
 
-  storeDirection(safeDirection);
+  storeDirection(safeDirection); // Speichern der aktuellen Schreibrichtung, damit sie bei zukünftigen Besuchen der Seite beibehalten wird.
 }
 
-function initDirectionToggle() {
+function initDirectionToggle() { // Funktion zur Initialisierung des Schreibrichtungstoggles, die die aktuelle Schreibrichtung anwendet und einen Event-Listener für den Toggle-Button hinzufügt.
   const button = document.getElementById("dirToggle");
 
   if (!button) {
     return;
   }
 
-  applyDirection(getStoredDirection() || detectPreferredDirection());
+  applyDirection(getStoredDirection() || detectPreferredDirection()); // Anwenden der gespeicherten Schreibrichtung oder, falls keine gespeichert ist, der bevorzugten Schreibrichtung des Benutzers.
 
-  button.addEventListener("click", () => {
+  button.addEventListener("click", () => { // Hinzufügen eines Klick-Event-Listeners zum Toggle-Button, der die Schreibrichtung zwischen "ltr" und "rtl" wechselt, wenn der Button geklickt wird.
     const current = document.documentElement.getAttribute("dir") || "ltr";
 
     if (current === "rtl") {
@@ -123,7 +123,7 @@ function initDirectionToggle() {
 
 document.addEventListener("DOMContentLoaded", initDirectionToggle);
 
-document.addEventListener("alpine:init", () => {
+document.addEventListener("alpine:init", () => { // Initialisierung der Alpine.js-Komponente "emissionsApp", die die Logik für die Filterung, Sortierung und Anzeige der Emissionsdaten enthält.
   Alpine.data("emissionsApp", () => ({
     rows: emissionsRows,
     countryQuery: "",
@@ -131,15 +131,15 @@ document.addEventListener("alpine:init", () => {
     selectedSector: "all",
     sortBy: "emissions",
     sortDir: "desc",
-
-    formatEmissions(value) {
+ 
+    formatEmissions(value) { // Funktion zur Formatierung der Emissionswerte mit einem Dezimalpunkt und einem Tausendertrennzeichen, um die Lesbarkeit zu verbessern.
       return Number(value).toLocaleString("de-DE", {
         minimumFractionDigits: 1,
         maximumFractionDigits: 1,
       });
     },
 
-    toggleSortDir() {
+    toggleSortDir() { // Funktion zum Umschalten der Sortierrichtung zwischen "asc" (aufsteigend) und "desc" (absteigend), um die Sortierung der Daten zu steuern.
       if (this.sortDir === "asc") {
         this.sortDir = "desc";
       } else {
@@ -147,7 +147,7 @@ document.addEventListener("alpine:init", () => {
       }
     },
 
-    resetFilters() {
+    resetFilters() { // Funktion zum Zurücksetzen aller Filter- und Sortieroptionen auf ihre Standardwerte, um die ursprüngliche Ansicht der Daten wiederherzustellen.  
       this.countryQuery = "";
       this.companyQuery = "";
       this.selectedSector = "all";
@@ -155,13 +155,13 @@ document.addEventListener("alpine:init", () => {
       this.sortDir = "desc";
     },
 
-    get filteredRows() {
-      const country = normalizeInput(this.countryQuery);
+    get filteredRows() { // Berechnete Eigenschaft, die die Zeilen basierend auf den aktuellen Filter- und Sortieroptionen filtert und sortiert, um die angezeigten Daten zu steuern.
+      const country = normalizeInput(this.countryQuery); // Normalisieren der Ländereingabe, um eine konsistente Filterung zu ermöglichen, unabhängig von Groß- und Kleinschreibung oder zusätzlichen Leerzeichen.
       const company = normalizeInput(this.companyQuery);
       const sector = this.selectedSector;
 
-      const filtered = this.rows.filter((row) => {
-        const matchCountry = !country || row.country.toLocaleLowerCase("de-DE").includes(country);
+      const filtered = this.rows.filter((row) => { // Filtern der Zeilen basierend auf den eingegebenen Suchbegriffen für Land und Unternehmen sowie der ausgewählten Branche, um nur die relevanten Daten anzuzeigen.
+        const matchCountry = !country || row.country.toLocaleLowerCase("de-DE").includes(country); // Überprüfen, ob die Ländereingabe leer ist oder ob der Ländername der Zeile die eingegebene Suche enthält, um eine flexible Filterung zu ermöglichen.
         const matchCompany = !company || row.company.toLocaleLowerCase("de-DE").includes(company);
         const matchSector = sector === "all" || row.sector === sector;
 
