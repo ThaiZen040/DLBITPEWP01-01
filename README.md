@@ -1,5 +1,3 @@
-# DLBITPEWP01-01
-
 Aufgabenstellung im Rahmen meines Studium.
 
 
